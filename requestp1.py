@@ -1,10 +1,13 @@
 import requests
 import json
+import time
+
+address = "bc1qyzxdu4px4jy8gwhcj82zpv7qzhvc0fvumgnh0r"
+url = "https://api.blockcypher.com/v1/btc/main/addrs/{}".format(address)
+response = requests.get(url)
+
 
 def get_bitcoin_address_info(address):
-    
-    url = "https://api.blockcypher.com/v1/btc/main/addrs/{}".format(address)
-    response = requests.get(url)
     if response.status_code == 200:
         data = response.json()
 
@@ -24,16 +27,13 @@ def get_bitcoin_address_info(address):
             '    }\n'
             '}\n'
         )
-        print(resultado_json)
+        #print(resultado_json)
         
-        return resultado_json
+        return json.dumps(data,indent=2)
     else:
         return response.status_code
 
 def balance(address):
-    
-    url = "https://api.blockcypher.com/v1/btc/main/addrs/{}".format(address)
-    response = requests.get(url)
     if response.status_code == 200:
         data = response.json()
 
@@ -44,14 +44,29 @@ def balance(address):
             f'  "unconfirmed": "{data["unconfirmed_balance"]}"\n'
             '}\n'
         )
-        print(resultado_json)
+        #print(resultado_json)
         
         return resultado_json
     else:
         return response.status_code
     
+def escolher_utxos(address):
+    if response.status_code == 200:
+        data = response.json()
+        dict = {}
+        # Criar um dicionário combinando os dados
+        resultado_json = data["txrefs"]
+        #print(resultado_json)
+        for tx in data["txrefs"]:
+            print(tx)
+            time.sleep(1)
+
+        
+        return json.dumps(resultado_json,indent=2)
+    else:
+        return response.status_code
 
 if __name__ == "__main__":
-    address = "bc1qyzxdu4px4jy8gwhcj82zpv7qzhvc0fvumgnh0r"
-    info = get_bitcoin_address_info(address)
+    
+    info = escolher_utxos(address)
     print(info)
