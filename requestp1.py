@@ -1,6 +1,5 @@
 import requests
 import json
-import time
 
 def get_bitcoin_address_info(address):
     url = "https://api.blockcypher.com/v1/btc/main/addrs/{}".format(address)
@@ -31,14 +30,12 @@ def balance(address):
     response = requests.get(url)
     if response.status_code == 200:
         data = response.json()
-
         resultado_json = (
             '{\n'
             f'  "confirmed": "{data["final_balance"]}",\n'
             f'  "unconfirmed": "{data["unconfirmed_balance"]}"\n'
             '}\n'
         )
-        
         return resultado_json
     else:
         return "O endereço de bitcoin está inválido : Erro {}".format(response.status_code)
@@ -49,7 +46,6 @@ def escolher_utxos(address):
     if response.status_code == 200:
         data = response.json()
         utxos = []
-
         resultado_json = data["txrefs"]
         for indice, tx in enumerate(data["txrefs"]):
             utxos.append({"txid":resultado_json[indice]["tx_hash"],
@@ -66,7 +62,6 @@ def info_tx(t_id):
     if response.status_code == 200:
         data = response.json()
         data_outputs= data["outputs"]
-        print(data_outputs)
         list_address = []
 
         for indice, tx in enumerate(data_outputs):
@@ -81,6 +76,7 @@ def info_tx(t_id):
     else:
         return "ID de transação está inválido : Erro {}".format(response.status_code)
 
+# Realizar testes das funções
 """if __name__ == "__main__":
     address = "de6d495ede6dbb072861ec38609dd065182ef784e1bc20bc7c1df651f404b0f7"
     info = info_tx(address)
