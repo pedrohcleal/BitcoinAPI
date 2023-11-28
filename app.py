@@ -33,13 +33,18 @@ def balance(address):
 @app.route('/send', methods=['POST'])
 def send_btc():
     data = request.json
-    #endereco_destino = data.get('send_address')
-    #quantidade_btc = data.get('qtd_btc')
+    endereco_destino = data.get('send_address')
+    quantidade_btc = data.get('qtd_btc')
+    info_utxo = requestp1.escolher_utxos(endereco_destino)
     print("solicitação antedida")
-
+    if (info_utxo):
+        
+        return render_template('detalhes_template.html', json_response=info_utxo)
+    else:
+        return jsonify({"erro": "Não foi possível obter os detalhes do endereço"}), 500
     return jsonify(data)
 
-@app.route('/txt/<txt>')
+@app.route('/txt/<txt>')  #https://api.blockcypher.com/v1/btc/main/txs
 def pagina5(txt):
     return f'Olá, {txt}!'
 

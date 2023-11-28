@@ -53,20 +53,32 @@ def balance(address):
 def escolher_utxos(address):
     if response.status_code == 200:
         data = response.json()
-        dict = {}
+        utxos = []
         # Criar um dicionário combinando os dados
         resultado_json = data["txrefs"]
-        #print(resultado_json)
-        for tx in data["txrefs"]:
-            print(tx)
-            time.sleep(1)
-
+        for indice, tx in enumerate(data["txrefs"]):
+            
+            utxos.append({"txid":resultado_json[indice]["tx_hash"],"amount":resultado_json[indice]["value"]})
+            #utxos.append({"amount":resultado_json[indice]["value"]})
         
-        return json.dumps(resultado_json,indent=2)
+        dict_utxo = {"utxos":utxos}
+        return json.dumps(dict_utxo,indent=2)
+    else:
+        return response.status_code
+    
+def info_tx(t_id):
+    url = "https://api.blockcypher.com/v1/btc/main/txs/{}".format(t_id)
+    response = requests.get(url)
+
+    if response.status_code == 200:
+        data = response.json()
+        return json.dumps(data,indent=2)
     else:
         return response.status_code
 
+
+
 if __name__ == "__main__":
-    
-    info = escolher_utxos(address)
+    address = "de6d495ede6dbb072861ec38609dd065182ef784e1bc20bc7c1df651f404b0f7"
+    info = info_tx(address)
     print(info)
