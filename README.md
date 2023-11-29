@@ -94,18 +94,62 @@ Este desafio visa criar uma aplicação em Flask que disponibiliza endpoints de 
 
 ## Como Executar
 
-1. Instale as dependências:
-   ```bash
-   pip install Flask requests
-   ```
+Para executar o `app.py` em um ambiente virtual sem a necessidade de instalar as bibliotecas globalmente, siga as etapas abaixo:
 
-2. Execute a aplicação:
-   ```bash
-   python app.py
-   ```
+### 1. Criando e Ativando o Ambiente Virtual
 
-3. Acesse os endpoints da API conforme necessário.
+Se você ainda não criou o ambiente virtual, faça isso na pasta do seu projeto:
 
+```bash
+# Ative o ambiente virtual
+# No Windows
+venv\Scripts\activate
+
+# No Linux/Mac
+source venv/bin/activate
+```
+
+Ao ativar o ambiente virtual, o prompt de comando ou terminal deve mostrar o nome do ambiente virtual, indicando que está ativo.
+
+### 2. Executando o `app.py`
+
+Certifique-se de estar no diretório do seu projeto no terminal e que o ambiente virtual está ativado.
+
+```bash
+# Execute o app.py
+python app.py
+```
+
+O Flask iniciará o servidor e estará pronto para receber solicitações.
+
+### 3. Acessando os Endpoints
+
+Com o servidor em execução, você pode acessar os endpoints da API no navegador ou usando ferramentas como o Postman.
+
+Por exemplo:
+- [http://localhost:5000/health](http://localhost:5000/health)
+- [http://localhost:5000/details/{address}](http://localhost:5000/details/{address})
+- [http://localhost:5000/balance/{address}](http://localhost:5000/balance/{address})
+- [http://localhost:5000/send](http://localhost:5000/send)
+- [http://localhost:5000/tx/{tx}](http://localhost:5000/tx/{tx})
+
+Lembre-se de substituir `{address}` e `{tx}` pelos valores específicos que você deseja consultar.
+
+### 4. Desativando o Ambiente Virtual
+
+Quando terminar de usar o aplicativo, desative o ambiente virtual:
+
+```bash
+# No Windows
+deactivate
+
+# No Linux/Mac
+source deactivate
+```
+
+Ao desativar o ambiente virtual, o prompt de comando ou terminal deve retornar ao ambiente global.
+
+Certifique-se de ajustar os comandos de acordo com o seu sistema operacional. Essas instruções assumem que você está usando um terminal padrão ou o PowerShell no Windows.
 ## Testando com Postman
 
 Para testar o endpoint de envio de bitcoins ("/send") usando o Postman:
@@ -124,68 +168,6 @@ Para testar o endpoint de envio de bitcoins ("/send") usando o Postman:
 
 ### Postman
 ![Exmplo](https://i.imgur.com/ueyWQFr.png)
-
-# Executando o `app.py` com Ambiente Virtual
-
-Para executar o `app.py` em um ambiente virtual sem a necessidade de instalar as bibliotecas globalmente, siga as etapas abaixo:
-
-## 1. Criando e Ativando o Ambiente Virtual
-
-Se você ainda não criou o ambiente virtual, faça isso na pasta do seu projeto:
-
-```bash
-# Crie o ambiente virtual
-python -m venv venv
-
-# Ative o ambiente virtual
-# No Windows
-venv\Scripts\activate
-
-# No Linux/Mac
-source venv/bin/activate
-```
-
-Ao ativar o ambiente virtual, o prompt de comando ou terminal deve mostrar o nome do ambiente virtual, indicando que está ativo.
-
-## 2. Executando o `app.py`
-
-Certifique-se de estar no diretório do seu projeto no terminal e que o ambiente virtual está ativado.
-
-```bash
-# Execute o app.py
-python app.py
-```
-
-O Flask iniciará o servidor e estará pronto para receber solicitações.
-
-## 3. Acessando os Endpoints
-
-Com o servidor em execução, você pode acessar os endpoints da API no navegador ou usando ferramentas como o Postman.
-
-Por exemplo:
-- [http://localhost:5000/health](http://localhost:5000/health)
-- [http://localhost:5000/details/{address}](http://localhost:5000/details/{address})
-- [http://localhost:5000/balance/{address}](http://localhost:5000/balance/{address})
-- [http://localhost:5000/send](http://localhost:5000/send)
-- [http://localhost:5000/tx/{tx}](http://localhost:5000/tx/{tx})
-
-Lembre-se de substituir `{address}` e `{tx}` pelos valores específicos que você deseja consultar.
-
-## 4. Desativando o Ambiente Virtual
-
-Quando terminar de usar o aplicativo, desative o ambiente virtual:
-
-```bash
-# No Windows
-deactivate
-
-# No Linux/Mac
-source deactivate
-```
-
-Ao desativar o ambiente virtual, o prompt de comando ou terminal deve retornar ao ambiente global.
-
-Certifique-se de ajustar os comandos de acordo com o seu sistema operacional. Essas instruções assumem que você está usando um terminal padrão ou o PowerShell no Windows.
 
 ### Avisos
 Lembre-se de ajustar os detalhes conforme necessário para o seu ambiente de desenvolvimento. Este projeto inclui um template HTML chamado "detalhes_template.html", que é usado para renderizar as respostas da API. Certifique-se de ter um ambiente de desenvolvimento adequado para suportar a renderização de templates HTML, ou ajuste conforme necessário.
