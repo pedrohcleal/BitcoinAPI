@@ -96,7 +96,7 @@ Este desafio visa criar uma aplicação em Flask que disponibiliza endpoints de 
 
 1. Instale as dependências:
    ```bash
-   pip install Flask
+   pip install Flask requests
    ```
 
 2. Execute a aplicação:
