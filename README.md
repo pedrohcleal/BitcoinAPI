@@ -125,6 +125,7 @@ Para testar o endpoint de envio de bitcoins ("/send") usando o Postman:
 ### Postman
 ![Exmplo](https://i.imgur.com/YH6Zt53.png)
 
+### Avisos
 Lembre-se de ajustar os detalhes conforme necessário para o seu ambiente de desenvolvimento. Este projeto inclui um template HTML chamado "detalhes_template.html", que é usado para renderizar as respostas da API. Certifique-se de ter um ambiente de desenvolvimento adequado para suportar a renderização de templates HTML, ou ajuste conforme necessário.
 
 O código também inclui uma função de validação de saúde ("health()") que verifica se a API BlockCypher está operacional. Certifique-se de ajustar conforme necessário para suas necessidades específicas.
