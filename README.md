@@ -144,7 +144,7 @@ Por exemplo:
 - [http://localhost:5000/send](http://localhost:5000/send)
 - [http://localhost:5000/tx/{tx}](http://localhost:5000/tx/{tx})
 
-Lembre-se de substituir `{address}` e `{tx}` pelos valores específicos que você deseja consultar.
+Lembre-se de substituir `{address}` e `{tx}` pelo endereço de carteiras de Bitcoin e IDs de transações respectivamente.
 
 7. **Desativando o Ambiente Virtual**
 
