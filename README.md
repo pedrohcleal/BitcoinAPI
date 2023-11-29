@@ -96,7 +96,7 @@ Este desafio visa criar uma aplicação em Flask que disponibiliza endpoints de 
 
 Para executar o `app.py` em um ambiente virtual sem a necessidade de instalar as bibliotecas globalmente, siga as etapas abaixo:
 
-### 1. Criando e Ativando o Ambiente Virtual
+### 1. Ativando o Ambiente Virtual
 
 Se você ainda não criou o ambiente virtual, faça isso na pasta do seu projeto:
 
