@@ -95,21 +95,21 @@ Este desafio visa criar uma aplicação em Flask que disponibiliza endpoints de 
 ## Como Executar
 
 ### Clone o repositório
-1. Abra o terminal na pasta onde deseja clonar o repositório.
+1. **Abra o terminal na pasta onde deseja clonar o repositório.**
 
-2. Execute o seguinte comando para clonar o repositório:
+2. **Execute o seguinte comando para clonar o repositório:**
 
    ```bash
    git clone https://github.com/pedrohcleal/Desafio-Klever.git
    ```
 
-3. Após a conclusão do clone, entre no diretório do projeto:
+3. **Após a conclusão do clone, entre no diretório do projeto:**
 
    ```bash
    cd Desafio-Klever
    ```
 
-4. Ativando o Ambiente Virtual
+4. **Ativando o Ambiente Virtual**
 
 ```bash
 # Ative o ambiente virtual
@@ -122,7 +122,7 @@ source venv/bin/activate
 
 Ao ativar o ambiente virtual, o prompt de comando ou terminal deve mostrar o nome do ambiente virtual, indicando que está ativo.
 
-5. Executando o `app.py`
+5. **Executando o `app.py`**
 
 Certifique-se de estar no diretório do seu projeto no terminal e que o ambiente virtual está ativado.
 
@@ -133,7 +133,7 @@ python app.py
 
 O Flask iniciará o servidor e estará pronto para receber solicitações.
 
-6. Acessando os Endpoints
+6. **Acessando os Endpoints**
 
 Com o servidor em execução, você pode acessar os endpoints da API no navegador ou usando ferramentas como o Postman.
 
@@ -146,7 +146,7 @@ Por exemplo:
 
 Lembre-se de substituir `{address}` e `{tx}` pelos valores específicos que você deseja consultar.
 
-7. Desativando o Ambiente Virtual
+7. **Desativando o Ambiente Virtual**
 
 Quando terminar de usar o aplicativo, desative o ambiente virtual:
 
@@ -161,6 +161,7 @@ source deactivate
 Ao desativar o ambiente virtual, o prompt de comando ou terminal deve retornar ao ambiente global.
 
 Certifique-se de ajustar os comandos de acordo com o seu sistema operacional. Essas instruções assumem que você está usando um terminal padrão ou o PowerShell no Windows.
+
 ## Testando com Postman
 
 Para testar o endpoint de envio de bitcoins ("/send") usando o Postman:
