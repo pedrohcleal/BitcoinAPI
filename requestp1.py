@@ -76,6 +76,14 @@ def info_tx(t_id):
     else:
         return "ID de transação está inválido : Erro {}".format(response.status_code)
 
+def health():
+    url = "https://api.blockcypher.com/v1/btc/main/"
+    response = requests.get(url)
+    if response.status_code == 200:
+        return "A API está operacional, status code: {}".format(response.status_code)
+    else:
+        return "A API não está opericioanl\nErro {}".format(response.status_code)
+
 # Realizar testes das funções
 """if __name__ == "__main__":
     address = "de6d495ede6dbb072861ec38609dd065182ef784e1bc20bc7c1df651f404b0f7"
