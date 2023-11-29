@@ -36,7 +36,6 @@ Este desafio visa criar uma aplicação em Flask que disponibiliza endpoints de 
         "sent": "665978870281",
         "received": "665978870281"
       }
-  }
    ```
 
 3. **GET /balance/{address}:**
