@@ -122,6 +122,7 @@ Para testar o endpoint de envio de bitcoins ("/send") usando o Postman:
    ```
 5. Envie a solicitação e veja a resposta.
 
+### Postman
 ![Exmplo](https://i.imgur.com/YH6Zt53.png)
 
 Lembre-se de ajustar os detalhes conforme necessário para o seu ambiente de desenvolvimento. Este projeto inclui um template HTML chamado "detalhes_template.html", que é usado para renderizar as respostas da API. Certifique-se de ter um ambiente de desenvolvimento adequado para suportar a renderização de templates HTML, ou ajuste conforme necessário.
