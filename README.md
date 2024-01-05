@@ -94,17 +94,73 @@ Este desafio visa criar uma aplicação em Flask que disponibiliza endpoints de 
 
 ## Como Executar
 
-1. Instale as dependências:
+### Clone o repositório
+1. **Abra o terminal na pasta onde deseja clonar o repositório.**
+
+2. **Execute o seguinte comando para clonar o repositório:**
+
    ```bash
-   pip install Flask requests
+   git clone https://github.com/pedrohcleal/Desafio-Klever.git
    ```
 
-2. Execute a aplicação:
+3. **Após a conclusão do clone, entre no diretório do projeto:**
+
    ```bash
-   python app.py
+   cd Desafio-Klever
    ```
 
-3. Acesse os endpoints da API conforme necessário.
+4. **Ativando o Ambiente Virtual**
+
+```bash
+# Ative o ambiente virtual
+# No Windows
+venv\Scripts\activate
+
+# No Linux/Mac
+source venv/bin/activate
+```
+
+Ao ativar o ambiente virtual, o prompt de comando ou terminal deve mostrar o nome do ambiente virtual, indicando que está ativo.
+
+5. **Executando o `app.py`**
+
+Certifique-se de estar no diretório do seu projeto no terminal e que o ambiente virtual está ativado.
+
+```bash
+# Execute o app.py
+python app.py
+```
+
+O Flask iniciará o servidor e estará pronto para receber solicitações.
+
+6. **Acessando os Endpoints**
+
+Com o servidor em execução, você pode acessar os endpoints da API no navegador ou usando ferramentas como o Postman.
+
+Por exemplo:
+- [http://localhost:5000/health](http://localhost:5000/health)
+- [http://localhost:5000/details/{address}](http://localhost:5000/details/{address})
+- [http://localhost:5000/balance/{address}](http://localhost:5000/balance/{address})
+- [http://localhost:5000/send](http://localhost:5000/send)
+- [http://localhost:5000/tx/{tx}](http://localhost:5000/tx/{tx})
+
+Lembre-se de substituir `{address}` e `{tx}` pelo endereço de carteiras de Bitcoin e IDs de transações respectivamente.
+
+7. **Desativando o Ambiente Virtual**
+
+Quando terminar de usar o aplicativo, desative o ambiente virtual:
+
+```bash
+# No Windows
+deactivate
+
+# No Linux/Mac
+source deactivate
+```
+
+Ao desativar o ambiente virtual, o prompt de comando ou terminal deve retornar ao ambiente global.
+
+Certifique-se de ajustar os comandos de acordo com o seu sistema operacional. Essas instruções assumem que você está usando um terminal padrão ou o PowerShell no Windows.
 
 ## Testando com Postman
 
@@ -124,8 +180,3 @@ Para testar o endpoint de envio de bitcoins ("/send") usando o Postman:
 
 ### Postman
 ![Exmplo](https://i.imgur.com/ueyWQFr.png)
-
-### Avisos
-Lembre-se de ajustar os detalhes conforme necessário para o seu ambiente de desenvolvimento. Este projeto inclui um template HTML chamado "detalhes_template.html", que é usado para renderizar as respostas da API. Certifique-se de ter um ambiente de desenvolvimento adequado para suportar a renderização de templates HTML, ou ajuste conforme necessário.
-
-O código também inclui uma função de validação de saúde ("health()") que verifica se a API BlockCypher está operacional. Certifique-se de ajustar conforme necessário para suas necessidades específicas.
