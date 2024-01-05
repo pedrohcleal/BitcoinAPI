@@ -62,7 +62,7 @@ def escolher_utxos(address, amount):
             selected_utxos.append(utxo)
             amount -= utxo["value"]
             # Se o valor restante da transação for zero, pare o algoritmo.
-        if amount == 0:
+        if amount <= 0:
             break
 
         return json.dumps(selected_utxos,indent=2)
