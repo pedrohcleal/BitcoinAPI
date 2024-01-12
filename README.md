@@ -1,4 +1,4 @@
-# Desafio Klever - Backend Test
+# Backend Test
 
 Este desafio visa criar uma aplicação em Flask que disponibiliza endpoints de API para obter informações sobre endereços Bitcoin, saldos, transações e seleção de UTXO para envio de bitcoins.
 
